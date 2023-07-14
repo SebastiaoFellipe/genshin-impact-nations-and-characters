@@ -6,17 +6,22 @@
 :root {
     --branco: #fff;
     --cinza: #aaa;
-    --cinza-escuro: #273036;
+    --cinza-escuro: #444;
     --preto: #000;
+    --azul-escuro: #284b63;
 }
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 12vh;
+    scroll-padding-top: 8vh;
 }
 body {
     font-family: sans-serif;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    background: url(../img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 header.sticky {
     height: 10vh;
@@ -40,12 +45,17 @@ header.sticky {
     align-items: center;
     cursor: pointer;
 }
+.header .logo a{
+    text-decoration: none;
+    display: flex;
+}
 .header .logo .icon-logo{
     color: var(--branco);
     font-size: 2rem;
     --ionicon-stroke-width: 3rem;
     margin-right: 5px;
 }
+
 .header .logo h1{
     color: var(--branco);
 }
@@ -84,19 +94,6 @@ header.sticky {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../img/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-}
-.homescreen::after {
-    content: '';
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    background: linear-gradient(transparent, var(--cinza-escuro));
 }
 .homescreen h1 { 
     color: var(--branco);
@@ -110,28 +107,98 @@ header.sticky {
         text-shadow: 0 2px 0 #222, 0 4px 0 #222, 0 6px 0 #222, 0 8px 0 #222;
     }
 }
-.content {
-    padding: 50px 250px;
-    background-color: var(--cinza-escuro);
+/*CSS DO CONTENT DA PÁGINA*/
+.content{
+    box-shadow: 0 0 20px rgb(0,0,0,0.6);
+    background-color: var(--branco);
+}
+.content section{
+    width: 80%;
+    margin: 50px auto;
 }
 .content h1 {
-    color: var(--branco);
+    color: var(--azul-escuro);
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    text-align: center;
 }
 .content p {
     text-align: justify;
     line-height: 1.5rem;
+    color: var(--preto);
+}
+.content-btn{
+    text-decoration: none;
+    color: var(--azul-escuro);
+    padding: 1rem 2rem;
+    border: 1px solid var(--azul-escuro);
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: .4s ease;
+}
+.content-btn:hover{
+    background-color: var(--azul-escuro);
     color: var(--branco);
-    margin: 10px 0;
 }
-.content hr {
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
-    height: 5px;
-    margin: 100px auto;
-    border: 0;
+/*CSS DO ABOUT DA PÁGINA*/
+.about{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 50px;
+    align-items: center;
 }
+.about .column-info{
+    flex: 1;
+}
+.about .column-img{
+    background-color: var(--cinza);
+    border-radius: 1rem;
+    flex: 1;
+}
+.about .column-img img{
+    width: 100%;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    box-shadow: 0 0 20px rgb(0,0,0,0.5);
+    border-radius: 1rem;
+}
+/*CSS DO REGIONS DA PÁGINA*/
+.regions{
+    text-align: center;
+    padding: 50px;  
+}
+.regions p{
+    width: 80%;
+    margin: 0 auto;
+}
+/*CSS DO CHARACTERS DA PÁGINA*/
+.characters{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    padding: 50px;
+}
+.characters .column-info{
+    flex: 1;
+    text-align: center;
+}
+.characters .column-img{
+    background-color: var(--cinza);
+    border-radius: 1rem;
+    flex: 1;
+}
+.characters .column-img img{
+    width: 100%;
+    position: relative;
+    top: -30px;
+    right: 30px;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgb(0,0,0,0.5);
+}
+/*CSS DO FOOT DA PÁGINA*/
 footer {
-    margin-top: 50px;
-    color: var(--branco);
+    
 }
