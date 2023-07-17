@@ -9,6 +9,14 @@
     --cinza-escuro: #444;
     --preto: #000;
     --azul-escuro: #284b63;
+    
+    --color-anemo: #26a684;
+    --color-geo: #e8b81a;
+    --color-electro: #9336b0;
+    --color-dendro: #74c503;
+    --color-hydro: #3173ff;
+    --color-pyro: #e03a28;
+    --color-cryo: #a3d1ff;
 }
 html {
     scroll-behavior: smooth;
@@ -111,20 +119,30 @@ header.sticky {
 .content{
     box-shadow: 0 0 20px rgb(0,0,0,0.6);
     background-color: var(--branco);
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 1rem;
 }
 .content section{
-    width: 80%;
+    width: 90%;
     margin: 50px auto;
 }
 .content h1 {
-    color: var(--azul-escuro);
     font-size: 2.5rem;
     text-align: center;
+    color: var(--azul-escuro);
 }
 .content p {
     text-align: justify;
     line-height: 1.5rem;
     color: var(--preto);
+}
+.content hr{
+    border: 0;
+    height: 5px;
+    width: 60%;
+    margin: 0 auto;
+    background: linear-gradient(to right, transparent, var(--cinza-escuro),transparent);
 }
 .content-btn{
     text-decoration: none;
@@ -164,6 +182,60 @@ header.sticky {
     box-shadow: 0 0 20px rgb(0,0,0,0.5);
     border-radius: 1rem;
 }
+.elements{
+    width: 100vw;
+}
+.elements-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.elements-container .elements-card{
+    width: 150px;
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgb(0,0,0,0.2);
+    transition: all .2s;
+}
+.elements-container .elements-card img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.elements-card:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+.elements-card:nth-child(1):hover{
+    color: var(--color-pyro);
+    box-shadow: 0 0 10px var(--color-pyro);
+}
+.elements-card:nth-child(2):hover{
+    color: var(--color-hydro);
+    box-shadow: 0 0 10px var(--color-hydro);
+}
+.elements-card:nth-child(3):hover{
+    color: var(--color-anemo);
+    box-shadow: 0 0 10px var(--color-anemo);
+}
+.elements-card:nth-child(4):hover{
+    color: var(--color-electro);
+    box-shadow: 0 0 10px var(--color-electro);
+}
+.elements-card:nth-child(5):hover{
+    color: var(--color-dendro);
+    box-shadow: 0 0 10px var(--color-dendro);
+}
+.elements-card:nth-child(6):hover{
+    color: var(--color-cryo);
+    box-shadow: 0 0 10px var(--color-cryo);
+}
+.elements-card:nth-child(7):hover{
+    color: var(--color-geo);
+    box-shadow: 0 0 10px var(--color-geo);
+}
 /*CSS DO REGIONS DA PÁGINA*/
 .regions{
     text-align: center;
@@ -172,6 +244,74 @@ header.sticky {
 .regions p{
     width: 80%;
     margin: 0 auto;
+}
+.regions p .elements-names:nth-child(1){
+    color: var(--color-pyro);
+}
+.regions p .elements-names:nth-child(2){
+    color: var(--color-hydro);
+}
+.regions p .elements-names:nth-child(3){
+    color: var(--color-anemo);
+}
+.regions p .elements-names:nth-child(4){
+    color: var(--color-electro);
+}
+.regions p .elements-names:nth-child(5){
+    color: var(--color-dendro);
+}
+.regions p .elements-names:nth-child(6){
+    color: var(--color-cryo);
+}
+.regions p .elements-names:nth-child(7){
+    color: var(--color-geo);
+}
+.regions-galery{
+    display: grid;
+    grid-template-areas:
+    'title title' 
+    'mondstadt liyue'
+    'inazuma sumeru'
+    'fontaine natlan'
+    'snezhnaya snezhnaya';
+    gap: 1rem;
+    margin-top: 50px;
+}
+.regions-galery h1{
+    grid-area: title;
+    background-color: #26a684;
+}
+.regions-galery .regions-img{
+    width: auto;
+    height: 300px;
+}
+.regions-galery .mondstadt{
+    grid-area: mondstadt;
+    background-color: #26a684;
+}
+.regions-galery .liyue{
+    grid-area: liyue;
+    background-color: #26a684;
+}
+.regions-galery .inazuma{
+    grid-area: inazuma;
+    background-color: #26a684;
+}
+.regions-galery .sumeru{
+    grid-area: sumeru;
+    background-color: #26a684;
+}
+.regions-galery .fontaine{
+    grid-area: fontaine;
+    background-color: #26a684;
+}
+.regions-galery .natlan{
+    grid-area: natlan;
+    background-color: #26a684;
+}
+.regions-galery .snezhnaya{
+    grid-area: snezhnaya;
+    background-color: #26a684;
 }
 /*CSS DO CHARACTERS DA PÁGINA*/
 .characters{
