@@ -3,9 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* VARIABLES */
 :root {
     --branco: #fff;
-    --cinza: #aaa;
+    --cinza: #999;
     --cinza-escuro: #444;
     --preto: #000;
     --azul-escuro: #284b63;
@@ -31,11 +32,13 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* CLASS RESPONSIBLE FOR GIVING EFFECT TO THE HEADER WHEN SCROLLING THE PAGE */
 header.sticky {
     height: 10vh;
     backdrop-filter: blur(10px);
     background: rgba(0, 0, 0, 0.4);
 }
+/* HEADER STYLE */
 .header {
     width: 100%;
     height: 12vh;
@@ -48,23 +51,24 @@ header.sticky {
     align-items: center;
     z-index: 1;
 }
-.header .logo{
+.logo{
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-.header .logo a{
+.logo a{
     text-decoration: none;
     display: flex;
+    align-items: center;
 }
-.header .logo .icon-logo{
+.logo .icon-logo{
     color: var(--branco);
     font-size: 2rem;
     --ionicon-stroke-width: 3rem;
     margin-right: 5px;
 }
 
-.header .logo h1{
+.logo h1{
     color: var(--branco);
 }
 .menu ul {
@@ -93,9 +97,7 @@ header.sticky {
     cursor: pointer;
     width: 100%;
 }
-#logo {
-    width: 10rem;
-}
+/* SECTION HOME SCREEN */
 .homescreen {
     height: 100vh;
     width: 100vw;
@@ -107,22 +109,29 @@ header.sticky {
     color: var(--branco);
     font-size: 4rem;
     text-align: center;
-    animation: show-title 1s ease forwards;
+    animation: show-title 1s ease both 1S;
 }
+/* ANIMATION OF ELEMENTS INSIDE THE HOME SCREEN */
 @keyframes show-title {
+    0%{
+        opacity: 0;
+    }
     100%{
+        opacity: 1;
         margin-top: -80px;
         text-shadow: 0 2px 0 #222, 0 4px 0 #222, 0 6px 0 #222, 0 8px 0 #222;
     }
 }
-/*CSS DO CONTENT DA PÁGINA*/
+/* MAIN */
 .content{
     box-shadow: 0 0 20px rgb(0,0,0,0.6);
     background-color: var(--branco);
     width: 90vw;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
     border-radius: 1rem;
+    padding-bottom: 50px;
 }
+/* STYLING OF TAGS INSIDE CONTENT CLASS */
 .content section{
     width: 90%;
     margin: 50px auto;
@@ -142,9 +151,10 @@ header.sticky {
     height: 5px;
     width: 60%;
     margin: 0 auto;
-    background: linear-gradient(to right, transparent, var(--cinza-escuro),transparent);
+    background: linear-gradient(to right, transparent, var(--azul-escuro),transparent);
 }
-.content-btn{
+/* BUTTON INSIDE OF CONTENT CLASS*/
+.content .btn{
     text-decoration: none;
     color: var(--azul-escuro);
     padding: 1rem 2rem;
@@ -154,41 +164,107 @@ header.sticky {
     border-radius: 1rem;
     transition: .4s ease;
 }
-.content-btn:hover{
+.content .btn:hover{
     background-color: var(--azul-escuro);
     color: var(--branco);
 }
-/*CSS DO ABOUT DA PÁGINA*/
-.about{
+/*SECTION PROLOGUE WITH FLEXBOX */
+.prologue{
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     padding: 50px;
     align-items: center;
 }
-.about .column-info{
+.prologue .column-info{
     flex: 1;
 }
-.about .column-img{
+.prologue .column-img{
     background-color: var(--cinza);
     border-radius: 1rem;
     flex: 1;
 }
-.about .column-img img{
+.prologue .column-img img{
     width: 100%;
     position: relative;
-    top: 30px;
-    left: 30px;
+    top: 20px;
+    left: 20px;
     box-shadow: 0 0 20px rgb(0,0,0,0.5);
     border-radius: 1rem;
 }
+/* SECTION NATIONS */
+.nations{
+    text-align: center;
+    padding: 30px 50px;
+}
+.nations p{
+    width: 80%;
+    margin: 0 auto;
+}
+/* PHOTO GALLERY OF EACH NATION WITH GRID */
+.nations-galery{
+    display: grid;
+    grid-template-areas:
+    'mondstadt liyue'
+    'inazuma sumeru'
+    'fontaine natlan'
+    'snezhnaya snezhnaya';
+    background-color: var(--cinza);
+    border-radius: 1rem;
+}
+.nations-galery-title{
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+.nations-galery .nations-img{
+    max-height: 300px;
+    aspect-ratio: 16/9;
+    border-radius: 1rem 1rem 0 0;
+}
+.nations-galery .nation{
+    padding: 20px;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+}
+.nations-galery .nation .caption{
+    background-color: var(--branco);
+    display: block;
+    padding: 10px;
+    position: relative;
+    top: -10px;
+    border-radius: 0 0 1rem 1rem;
+}
+.nations-galery .mondstadt{
+    grid-area: mondstadt;
+}
+.nations-galery .liyue{
+    grid-area: liyue;
+}
+.nations-galery .inazuma{
+    grid-area: inazuma;
+}
+.nations-galery .sumeru{
+    grid-area: sumeru;
+}
+.nations-galery .fontaine{
+    grid-area: fontaine;
+}
+.nations-galery .natlan{
+    grid-area: natlan;
+}
+.nations-galery .snezhnaya{
+    grid-area: snezhnaya;
+    justify-self: center;
+}
+/* SECTION ELEMENTS */
 .elements{
+    padding-top: 30px;  
     width: 100vw;
 }
+/* ELEMENTS LISTED SIDE BY SIDE WITH FLEXBOX*/
 .elements-container{
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    margin: 50px 0;
 }
 .elements-container .elements-card{
     width: 150px;
@@ -208,6 +284,7 @@ header.sticky {
     cursor: pointer;
     transform: translateY(-10px);
 }
+/* HOVER EFECT IN ELEMENTS CARDS*/
 .elements-card:nth-child(1):hover{
     color: var(--color-pyro);
     box-shadow: 0 0 10px var(--color-pyro);
@@ -236,84 +313,33 @@ header.sticky {
     color: var(--color-geo);
     box-shadow: 0 0 10px var(--color-geo);
 }
-/*CSS DO REGIONS DA PÁGINA*/
-.regions{
-    text-align: center;
-    padding: 50px;  
-}
-.regions p{
+.elements p{
     width: 80%;
     margin: 0 auto;
 }
-.regions p .elements-names:nth-child(1){
+/* ELEMENTS WITH THEIR RESPECTIVE COLORS IN THE P TAG INSIDE THE PARAGRAPH */
+.elements-names:nth-child(1){
     color: var(--color-pyro);
 }
-.regions p .elements-names:nth-child(2){
+.elements-names:nth-child(2){
     color: var(--color-hydro);
 }
-.regions p .elements-names:nth-child(3){
+.elements-names:nth-child(3){
     color: var(--color-anemo);
 }
-.regions p .elements-names:nth-child(4){
+.elements-names:nth-child(4){
     color: var(--color-electro);
 }
-.regions p .elements-names:nth-child(5){
+.elements-names:nth-child(5){
     color: var(--color-dendro);
 }
-.regions p .elements-names:nth-child(6){
+.elements-names:nth-child(6){
     color: var(--color-cryo);
 }
-.regions p .elements-names:nth-child(7){
+.elements-names:nth-child(7){
     color: var(--color-geo);
 }
-.regions-galery{
-    display: grid;
-    grid-template-areas:
-    'title title' 
-    'mondstadt liyue'
-    'inazuma sumeru'
-    'fontaine natlan'
-    'snezhnaya snezhnaya';
-    gap: 1rem;
-    margin-top: 50px;
-}
-.regions-galery h1{
-    grid-area: title;
-    background-color: #26a684;
-}
-.regions-galery .regions-img{
-    width: auto;
-    height: 300px;
-}
-.regions-galery .mondstadt{
-    grid-area: mondstadt;
-    background-color: #26a684;
-}
-.regions-galery .liyue{
-    grid-area: liyue;
-    background-color: #26a684;
-}
-.regions-galery .inazuma{
-    grid-area: inazuma;
-    background-color: #26a684;
-}
-.regions-galery .sumeru{
-    grid-area: sumeru;
-    background-color: #26a684;
-}
-.regions-galery .fontaine{
-    grid-area: fontaine;
-    background-color: #26a684;
-}
-.regions-galery .natlan{
-    grid-area: natlan;
-    background-color: #26a684;
-}
-.regions-galery .snezhnaya{
-    grid-area: snezhnaya;
-    background-color: #26a684;
-}
-/*CSS DO CHARACTERS DA PÁGINA*/
+/*SECTION CHARACTERS WITH FLEXBOX */
 .characters{
     display: flex;
     gap: 2rem;
@@ -333,12 +359,50 @@ header.sticky {
 .characters .column-img img{
     width: 100%;
     position: relative;
-    top: -30px;
-    right: 30px;
+    top: -20px;
+    right: 20px;
     border-radius: 1rem;
     box-shadow: 0 0 20px rgb(0,0,0,0.5);
 }
-/*CSS DO FOOT DA PÁGINA*/
-footer {
-    
+/* FOOTER */
+.footer{
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+}
+.footer-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px 50px;
+}
+.footer-info .column{
+    justify-self: center;
+}
+.footer-info .about{
+    text-align: justify;
+}
+.footer-info .column h2{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.footer-info .column h2::after{
+    content: '';
+    background-color: var(--branco);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 150%;
+}
+.footer-info .links li{
+    margin: 10px 0;
+    list-style: none;
+}
+.footer-info .links a{
+    color: var(--branco);
+    text-decoration: none;
+}
+.footer .copyright{
+    text-align: center;
+    padding: 10px;
 }
