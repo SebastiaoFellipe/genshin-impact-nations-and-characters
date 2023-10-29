@@ -6,8 +6,8 @@
 /* VARIABLES */
 :root {
     --branco: #fff;
-    --cinza: #999;
-    --cinza-escuro: #444;
+    --cinza: #808080;
+    --cinza-escuro: #353535;
     --preto: #000;
     --azul-escuro: #284b63;
     
@@ -19,24 +19,23 @@
     --color-pyro: #e03a28;
     --color-cryo: #a3d1ff;
 }
-html {
+html, body {
     scroll-behavior: smooth;
-    scroll-padding-top: 8vh;
+    scroll-padding-top: 6vh;
 }
 body {
-    font-family: sans-serif;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     background: url(../img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: right;
 }
 /* CLASS RESPONSIBLE FOR GIVING EFFECT TO THE HEADER WHEN SCROLLING THE PAGE */
 header.sticky {
     height: 10vh;
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.4);
+    background-color: var(--azul-escuro);
 }
 /* HEADER STYLE */
 .header {
@@ -45,21 +44,20 @@ header.sticky {
     position: fixed;
     top: 0;
     padding: 0 40px;
-    display: flex;
     transition: 0.5s ease;
-    justify-content: space-between;
-    align-items: center;
     z-index: 1;
 }
-.logo{
+.nav-bar{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    height: 100%;
 }
-.logo a{
+.logo{
     text-decoration: none;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .logo .icon-logo{
     color: var(--branco);
@@ -70,12 +68,14 @@ header.sticky {
 
 .logo h1{
     color: var(--branco);
+    letter-spacing: 4px;
 }
-.menu ul {
+/* MENU INSIDE NAVBAR CLASS*/
+.nav-list {
     display: flex;
     list-style: none;
 }
-.menu li a {
+.nav-list li a {
     color: var(--branco);
     padding: 0.2rem 0.5rem;
     margin-left: 20px;
@@ -83,7 +83,7 @@ header.sticky {
     text-decoration: none;
     position: relative;
 }
-.menu li a::after {
+.nav-list li a::after {
     content: '';
     background-color: var(--branco);
     position: absolute;
@@ -93,10 +93,65 @@ header.sticky {
     width: 0;
     transition: .2s ease;
 }
-.menu li a:hover, .menu li a:hover::after {
+.nav-list li a:hover, .nav-list li a:hover::after {
     cursor: pointer;
     width: 100%;
 }
+/* MOBILE MENU INSIDE NAVBAR CLASS*/
+.mobile-menu-icon{
+    display: none;
+}
+.mobile-menu-icon ion-icon{
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+.mobile-nav-list{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 10vh;
+    list-style: none;
+    text-align: center;
+    background-color: var(--azul-escuro);
+    z-index: 0;
+    transform: translateY(calc(-100% - 10vh));
+}
+.mobile-nav-list.open{
+    animation: open-menu .8s ease forwards;
+}
+.mobile-nav-list.close{
+    animation: close-menu .8s ease forwards;
+}
+@keyframes open-menu {
+    0%{
+        transform: translateY(calc(-100% - 10vh));
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes close-menu {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(calc(-100% - 10vh));
+    }
+}
+.mobile-nav-list li{
+    width: 100vw;
+    padding: 1.5rem;
+}
+.mobile-nav-list li a{
+    text-decoration: none;
+    color: var(--branco);
+    height: 100px;
+    padding: .5rem;
+}
+
 /* SECTION HOME SCREEN */
 .homescreen {
     height: 100vh;
@@ -109,7 +164,7 @@ header.sticky {
     color: var(--branco);
     font-size: 4rem;
     text-align: center;
-    animation: show-title 1s ease both 1S;
+    animation: show-title 1s ease both .5s;
 }
 /* ANIMATION OF ELEMENTS INSIDE THE HOME SCREEN */
 @keyframes show-title {
@@ -122,19 +177,31 @@ header.sticky {
         text-shadow: 0 2px 0 #222, 0 4px 0 #222, 0 6px 0 #222, 0 8px 0 #222;
     }
 }
+/* BUTTON TO GO TO TOP OF PAGE */
+.to-top ion-icon{
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    background-color: var(--cinza-escuro);
+    height: 80px;
+    width: 80px;
+    color: var(--branco);
+    border-radius: 1rem;
+    display: block;
+}
 /* MAIN */
 .content{
-    box-shadow: 0 0 20px rgb(0,0,0,0.6);
+    box-shadow: -10px -10px 10px rgba(255, 255, 255);
     background-color: var(--branco);
-    width: 90vw;
-    margin: 0 auto 50px auto;
-    border-radius: 1rem;
+    width: 100vw;
+    margin: 0 auto;
     padding-bottom: 50px;
 }
 /* STYLING OF TAGS INSIDE CONTENT CLASS */
 .content section{
-    width: 90%;
-    margin: 50px auto;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
 }
 .content h1 {
     font-size: 2.5rem;
@@ -142,9 +209,9 @@ header.sticky {
     color: var(--azul-escuro);
 }
 .content p {
-    text-align: justify;
     line-height: 1.5rem;
     color: var(--preto);
+    text-align: justify;
 }
 .content hr{
     border: 0;
@@ -153,7 +220,7 @@ header.sticky {
     margin: 0 auto;
     background: linear-gradient(to right, transparent, var(--azul-escuro),transparent);
 }
-/* BUTTON INSIDE OF CONTENT CLASS*/
+/* BUTTONS INSIDE CONTENT CLASS*/
 .content .btn{
     text-decoration: none;
     color: var(--azul-escuro);
@@ -173,7 +240,6 @@ header.sticky {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    padding: 50px;
     align-items: center;
 }
 .prologue .column-info{
@@ -183,6 +249,7 @@ header.sticky {
     background-color: var(--cinza);
     border-radius: 1rem;
     flex: 1;
+    width: 100%;
 }
 .prologue .column-img img{
     width: 100%;
@@ -195,79 +262,66 @@ header.sticky {
 /* SECTION NATIONS */
 .nations{
     text-align: center;
-    padding: 30px 50px;
 }
 .nations p{
     width: 80%;
     margin: 0 auto;
+    text-align: center;
 }
 /* PHOTO GALLERY OF EACH NATION WITH GRID */
 .nations-galery{
     display: grid;
-    grid-template-areas:
-    'mondstadt liyue'
-    'inazuma sumeru'
-    'fontaine natlan'
-    'snezhnaya snezhnaya';
-    background-color: var(--cinza);
-    border-radius: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
 }
 .nations-galery-title{
     text-align: center;
-    margin: 50px 0 20px 0;
-}
-.nations-galery .nations-img{
-    max-height: 300px;
-    aspect-ratio: 16/9;
-    border-radius: 1rem 1rem 0 0;
+    margin: 50px 0;
 }
 .nations-galery .nation{
-    padding: 20px;
-    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4));
+}
+.nations-galery .nations-img{
+    border-bottom: 0;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem 1rem 0 0;
 }
 .nations-galery .nation .caption{
-    background-color: var(--branco);
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+    font-size: 1.2rem;
     display: block;
+    margin-top: -5px;
     padding: 10px;
-    position: relative;
-    top: -10px;
+    width: 100%;
     border-radius: 0 0 1rem 1rem;
 }
-.nations-galery .mondstadt{
-    grid-area: mondstadt;
-}
-.nations-galery .liyue{
-    grid-area: liyue;
-}
-.nations-galery .inazuma{
-    grid-area: inazuma;
-}
-.nations-galery .sumeru{
-    grid-area: sumeru;
-}
-.nations-galery .fontaine{
-    grid-area: fontaine;
-}
-.nations-galery .natlan{
-    grid-area: natlan;
-}
-.nations-galery .snezhnaya{
-    grid-area: snezhnaya;
+.nations-galery .snezhnaya{ 
+    grid-column: span 2;
+    width: 50%;
     justify-self: center;
 }
 /* SECTION ELEMENTS */
-.elements{
-    padding-top: 30px;  
+.elements{ 
     width: 100vw;
+}
+.elements p{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 /* ELEMENTS LISTED SIDE BY SIDE WITH FLEXBOX*/
 .elements-container{
     display: flex;
     justify-content: space-around;
-    margin: 50px 0;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    gap: 1rem;
+    width: 100%;
 }
 .elements-container .elements-card{
-    width: 150px;
+    width: 110px;
     display: inline-block;
     padding: 20px;
     text-align: center;
@@ -275,68 +329,107 @@ header.sticky {
     border-radius: 1rem;
     box-shadow: 0 0 10px rgb(0,0,0,0.2);
     transition: all .2s;
+    cursor: pointer;
 }
 .elements-container .elements-card img{
     width: 100%;
-    margin-bottom: 10px;
 }
 .elements-card:hover{
-    cursor: pointer;
     transform: translateY(-10px);
 }
 /* HOVER EFECT IN ELEMENTS CARDS*/
-.elements-card:nth-child(1):hover{
+.elements-card.pyro:hover{
     color: var(--color-pyro);
-    box-shadow: 0 0 10px var(--color-pyro);
+    box-shadow: 0 2px 6px var(--color-pyro);
 }
-.elements-card:nth-child(2):hover{
+.elements-card.hydro:hover{
     color: var(--color-hydro);
-    box-shadow: 0 0 10px var(--color-hydro);
+    box-shadow: 0 2px 6px var(--color-hydro);
 }
-.elements-card:nth-child(3):hover{
+.elements-card.anemo:hover{
     color: var(--color-anemo);
-    box-shadow: 0 0 10px var(--color-anemo);
+    box-shadow: 0 2px 6px var(--color-anemo);
 }
-.elements-card:nth-child(4):hover{
+.elements-card.electro:hover{
     color: var(--color-electro);
-    box-shadow: 0 0 10px var(--color-electro);
+    box-shadow: 0 2px 6px var(--color-electro);
 }
-.elements-card:nth-child(5):hover{
+.elements-card.dendro:hover{
     color: var(--color-dendro);
-    box-shadow: 0 0 10px var(--color-dendro);
+    box-shadow: 0 2px 6px var(--color-dendro);
 }
-.elements-card:nth-child(6):hover{
+.elements-card.cryo:hover{
     color: var(--color-cryo);
-    box-shadow: 0 0 10px var(--color-cryo);
+    box-shadow: 0 2px 6px var(--color-cryo);
 }
-.elements-card:nth-child(7):hover{
+.elements-card.geo:hover{
     color: var(--color-geo);
-    box-shadow: 0 0 10px var(--color-geo);
+    box-shadow: 0 2px 6px var(--color-geo);
 }
-.elements p{
-    width: 80%;
-    margin: 0 auto;
+.elements-container #modal-fade{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; 
+    display: none;
 }
+.elements-container .elements-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    border: none;
+    padding: 20px;
+    z-index: 11;
+}
+.elements-container .elements-modal .modal-title{
+    display: flex;
+    justify-content: space-between;
+}
+.elements-container .elements-modal .modal-close{
+    font-size: 2rem;
+    color: var(--preto);
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+.elements-container .elements-modal .modal-text{
+    
+}
+.elements-container .element-modal .modal-close{
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+
 /* ELEMENTS WITH THEIR RESPECTIVE COLORS IN THE P TAG INSIDE THE PARAGRAPH */
-.elements-names:nth-child(1){
+.color-text-pyro{
     color: var(--color-pyro);
 }
-.elements-names:nth-child(2){
+.color-text-hydro{
     color: var(--color-hydro);
 }
-.elements-names:nth-child(3){
+.color-text-anemo{
     color: var(--color-anemo);
 }
-.elements-names:nth-child(4){
+.color-text-electro{
     color: var(--color-electro);
 }
-.elements-names:nth-child(5){
+.color-text-dendro{
     color: var(--color-dendro);
 }
-.elements-names:nth-child(6){
+.color-text-cryo{
     color: var(--color-cryo);
 }
-.elements-names:nth-child(7){
+.color-text-geo{
     color: var(--color-geo);
 }
 /*SECTION CHARACTERS WITH FLEXBOX */
@@ -345,7 +438,7 @@ header.sticky {
     gap: 2rem;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    padding: 50px;
+    align-items: center;
 }
 .characters .column-info{
     flex: 1;
@@ -355,6 +448,7 @@ header.sticky {
     background-color: var(--cinza);
     border-radius: 1rem;
     flex: 1;
+    height: 100%;
 }
 .characters .column-img img{
     width: 100%;
@@ -397,10 +491,19 @@ header.sticky {
 .footer-info .links li{
     margin: 10px 0;
     list-style: none;
+    display: flex;
+    align-items: center;
+}
+.footer-info .links ion-icon{
+    font-size: 1.5rem;
+    margin-right: 5px;
 }
 .footer-info .links a{
     color: var(--branco);
     text-decoration: none;
+}
+.footer-info .links a:hover{
+    text-decoration: underline;
 }
 .footer .copyright{
     text-align: center;

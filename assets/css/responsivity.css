@@ -1,0 +1,290 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* VARIABLES */
+:root {
+    --branco: #fff;
+    --cinza: #808080;
+    --cinza-escuro: #353535;
+    --preto: #000;
+    --azul-escuro: #284b63;
+    
+    --color-anemo: #26a684;
+    --color-geo: #e8b81a;
+    --color-electro: #9336b0;
+    --color-dendro: #74c503;
+    --color-hydro: #3173ff;
+    --color-pyro: #e03a28;
+    --color-cryo: #a3d1ff;
+}
+/* TABLETS */
+@media screen and (min-width:767px) and (max-width:1024px) {
+    .nav-list{
+        display: none;
+    }
+    .mobile-menu-icon{
+        display: block;
+    }
+    .homescreen{
+        height: 75vh;
+    }
+    .homescreen h1 { 
+        font-size: 3rem;
+        animation: none;
+        text-shadow: 0 2px 0 #222, 0 4px 0 #222, 0 6px 0 #222, 0 8px 0 #222;
+    }
+    .to-top ion-icon{
+        display: none;
+    }
+    .content{
+        width: 100vw;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        border-radius: 0;
+    }
+    /* STYLING OF TAGS INSIDE CONTENT CLASS */
+    .content section{
+        width: 90%;
+        margin: 50px auto;
+    }
+    .content h1 {
+        font-size: 2rem;
+        text-align: center;
+        color: var(--azul-escuro);
+    }
+    .content p {
+        text-align: justify;
+        line-height: 1.5rem;
+        color: var(--preto);
+    }
+    .content hr{
+        border: 0;
+        height: 5px;
+        width: 60%;
+        margin: 0 auto;
+        background: linear-gradient(to right, transparent, var(--azul-escuro),transparent);
+    }
+    .prologue{
+        display: block;
+    }
+    .prologue .column-img{
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+    }
+    .prologue .column-img img {
+        max-width: 80%;
+        box-shadow: 0 0 20px rgb(0,0,0,0.5);
+        border-radius: 1rem;
+        position: relative;
+        top: 40px;
+        left: 0;
+    }
+    .nations-galery{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+    .nations-galery .nation{
+        grid-column: 1;
+        max-width: 80%;
+        justify-self: center;
+    }
+    .nations-galery .snezhnaya{ 
+        width: 100%;   
+    }
+    .elements-container{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 50px auto;
+        gap: 2rem;
+        width: 80%;
+    }
+    .elements-container .elements-card{
+        min-width: 100px;
+        display: inline-block;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgb(0,0,0,0.2);
+        transition: all .2s;
+    }
+    .elements-container .elements-card img{
+        width: 100%;
+    }
+    .characters{
+        display: block;
+    }
+    .characters .column-img{
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+    }
+    .characters .column-img img {
+        max-width: 80%;
+        box-shadow: 0 0 20px rgb(0,0,0,0.5);
+        border-radius: 1rem;
+        position: relative;
+        top: 40px;
+        right: 0;
+    }
+    .footer-info{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        padding: 20px 50px;
+    }
+    .footer-info .column{
+        justify-self: start;
+        width: 100%;
+    }
+    .footer-info .links{
+        display: flex;
+        list-style: none; 
+    }
+    .footer-info .links li{
+        margin-right: 2rem;
+    }
+}
+/* SMARTPHONE */
+@media screen and (max-width:767px) {
+    .nav-list{
+        display: none;
+    }
+    .mobile-menu-icon{
+        display: block;
+    }
+    .homescreen{
+        height: 50vh;
+    }
+    .homescreen h1 { 
+        font-size: 2.5rem;
+        animation: none;
+        text-shadow: 0 2px 0 #222, 0 4px 0 #222, 0 6px 0 #222, 0 8px 0 #222;
+    }
+    .to-top ion-icon{
+        display: none;
+    }
+    .content{
+        width: 100vw;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        border-radius: 0;
+    }
+    /* STYLING OF TAGS INSIDE CONTENT CLASS */
+    .content section{
+        width: 100%;
+        margin: 50px auto;
+        padding: 30px 50px;
+    }
+    .content h1 {
+        font-size: 2rem;
+        text-align: center;
+        color: var(--azul-escuro);
+    }
+    .content p {
+        font-size: 0.9rem;
+        text-align: justify;
+        line-height: 1.2rem;
+        color: var(--preto);
+    }
+    .content hr{
+        border: 0;
+        height: 5px;
+        width: 60%;
+        margin: 0 auto;
+        background: linear-gradient(to right, transparent, var(--azul-escuro),transparent);
+    }
+    .prologue{
+        display: block;
+    }
+    .prologue .column-img{
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+    }
+    .prologue .column-img img {
+        width: 100%;
+        box-shadow: 0 0 20px rgb(0,0,0,0.5);
+        border-radius: 1rem;
+        position: relative;
+        top: 40px;
+        left: 0;
+    }
+    .nations{
+        padding: 0 !important;
+    }
+    .nations p{
+        width: 80%;
+    }
+    .nations-galery{
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+    .nations-galery .nation{
+        grid-column: 1;
+        max-width: 80%;
+        justify-self: center;
+    }
+    .elements-container{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        
+        gap: 1.5rem;
+        width: 80%;
+    }
+    .elements-container .elements-card{
+        min-width: 100px;
+        display: inline-block;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgb(0,0,0,0.2);
+        transition: all .2s;
+    }
+    .elements-container .elements-card img{
+        width: 100%;
+    }
+    .characters{
+        display: block;
+    }
+    .characters .column-img{
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+    }
+    .characters .column-img img {
+        width: 100%;
+        box-shadow: 0 0 20px rgb(0,0,0,0.5);
+        border-radius: 1rem;
+        position: relative;
+        top: 40px;
+        right: 0;
+    }
+    .footer-info{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        padding: 20px 50px;
+    }
+    .footer-info .column{
+        justify-self: start;
+        width: 100%;
+    }
+    .footer-info .links{
+        
+        list-style: none; 
+    }
+    .footer-info .links li{
+        margin-right: 2rem;
+    }
+}

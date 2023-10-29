@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genshin Impact - Mundo e Personagens</title>
     <!--css-->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsivity.css">
     <!--fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,18 +19,26 @@
 
 <body>
     <header class="header">
-        <div class="logo">
-            <a href="#home">
+        <nav class="nav-bar">
+            <a class="logo" href="#home">
                 <ion-icon class="icon-logo" name="book-outline"></ion-icon>
                 <h1>Genshin Library</h1>
             </a>
-        </div>
-        <nav class="menu">
-            <ul>
+            <ul class="nav-list">
                 <li><a href="#prologue">Prólogo</a></li>
                 <li><a href="#nations">Nações</a></li>
                 <li><a href="#elements">Elementos</a></li>
                 <li><a href="#characters">Personages</a></li>
+            </ul>
+            <div class="mobile-menu-icon" onclick="toggle_menu()">
+                <ion-icon class="menu-open" name="menu-outline"></ion-icon>
+                <ion-icon class="menu-close" name="close-outline"></ion-icon>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a class="mobile-nav-list-links" href="#prologue">Prólogo</a></li>
+                <li><a class="mobile-nav-list-links" href="#nations">Nações</a></li>
+                <li><a class="mobile-nav-list-links" href="#elements">Elementos</a></li>
+                <li><a class="mobile-nav-list-links" href="#characters">Personages</a></li>
             </ul>
         </nav>
     </header>
@@ -38,13 +47,11 @@
             <h1>Bem-vindo ao<br>mundo de Teyvat</h1>
         </div>
     </section>
+    <a class="to-top" href="#home" title="Go to top"><ion-icon name="arrow-up-outline"></ion-icon></a>
     <main class="content">
         <section id="prologue" class="prologue">
             <div class="column-info">
                 <h1>Prólogo</h1><br>
-                <!-- <p>Como um viajante de origem desconhecida, você irá partir para uma jornada no mundo de Teyvat, junto
-                    com sua guia e companheira de viagem paimon, em busca do seu parente de sangue que foi separado de
-                    você durante uma batalha contra uma deusa desconhecida.</p> -->
                 <p>Como um viajante de origem desconhecida, em uma das suas viajens você trava uma batalha contra uma
                     divindade desconhecida que captura seu parente de sangue, e além de selar seus poderes, ela te exila
                     para o mundo de Teyvat. Vagando por esse mundo, em uma das suas pescarias, você acaba pescando
@@ -52,91 +59,157 @@
                     partem uma uma jornada nesse mundo desconhecido em busca do seu parente perdido!</p>
             </div>
             <div class="column-img">
-                <img src="./img/aether and lumine.png" alt="personagens aether e lumine">
+                <img src="assets/img/aether and lumine.png" alt="personagens aether e lumine">
             </div>
         </section>
         <hr>
         <section id="nations" class="nations">
+            <br>
             <h1>Nações</h1><br>
             <p>Explore todas as sete nações de Teyvat, conheçendo suas diferentes culturas e paisagens, enfrentando os
                 desafios para desvendar os segredos ocultos de cada uma nesse mundo vasto, cheio de aventuras e
                 mistérios. Cada
-                nação é governada por um arconte que representa um elemento diferente e um ideal. Clique no botão para
-                saber mais sobre cada nação ou veja as imagens das cidades principais de cada uma na próximo seção.</p>
+                nação é governada por um arconte que representa um elemento diferente e um ideal. Clique no botão abaixo
+                para
+                saber mais sobre cada nação.</p>
             <br>
             <a class="btn" href="pages/nations.html">Conhecer nações</a>
             <h1 class="nations-galery-title">Galeria das Nações</h1>
             <div class="nations-galery">
-                <div class="nation mondstadt">
-                    <img class="nations-img" src="./img/nation mondstadt.png" alt="região de mondstadt">
-                    <span class="caption">Mondstadt: nação do elemento anemo e da liberdade</span>
-                </div>
-                <div class="nation liyue">
-                    <img class="nations-img " src="./img/nation liyue.png" alt="região de liyue">
-                    <span class="caption">Liyue: nação do elemento geo e dos contratos</span>
-                </div>
-                <div class="nation inazuma">
-                    <img class="nations-img " src="./img/nation inazuma.png" alt="região de inazuma">
-                    <span class="caption">Inazuma: nação do elemento electro e da eternidade</span>
-                </div>
-                <div class="nation sumeru">
-                    <img class="nations-img " src="./img/nation sumeru.png" alt="região de sumeru">
-                    <span class="caption">Sumeru: nação do electro dendro e do conhecimento</span>
-                </div>
-                <div class="nation fontaine">
-                    <img class="nations-img " src="./img/no image.png" alt="região de fontaine">
-                    <span class="caption">Fontaine: nação do elemento hydro e ???</span>
-                </div>
-                <div class="nation natlan">
-                    <img class="nations-img " src="./img/no image.png" alt="região de natlan">
-                    <span class="caption">Natlan: nação do elemento pyro e ???</span>
-                </div>
-                <div class="nation snezhnaya">
-                    <img class="nations-img " src="./img/no image.png" alt="região de snezhnaya">
-                    <span class="caption">Snezhnaya: nação do elemento cryo e ???</span>
-                </div>
+                <figure class="nation mondstadt">
+                    <img class="nations-img" src="assets/img/nation mondstadt.png" alt="região de mondstadt">
+                    <figcaption class="caption">Mondstadt</figcaption>
+                </figure>
+                <figure class="nation liyue">
+                    <img class="nations-img " src="assets/img/nation liyue.png" alt="região de liyue">
+                    <figcaption class="caption">Liyue</figcaption>
+                </figure>
+                <figure class="nation inazuma">
+                    <img class="nations-img " src="assets/img/nation inazuma.png" alt="região de inazuma">
+                    <figcaption class="caption">Inazuma</figcaption>
+                </figure>
+                <figure class="nation sumeru">
+                    <img class="nations-img " src="assets/img/nation sumeru.png" alt="região de sumeru">
+                    <figcaption class="caption">Sumeru</figcaption>
+                </figure>
+                <figure class="nation fontaine">
+                    <img class="nations-img " src="assets/img/no image.png" alt="região de fontaine">
+                    <figcaption class="caption">Fontaine</figcaption>
+                </figure>
+                <figure class="nation natlan">
+                    <img class="nations-img " src="assets/img/no image.png" alt="região de natlan">
+                    <figcaption class="caption">Natlan</figcaption>
+                </figure>
+                <figure class="nation snezhnaya">
+                    <img class="nations-img " src="assets/img/no image.png" alt="região de snezhnaya">
+                    <figcaption class="caption">Snezhnaya</figcaption>
+                </figure>
             </div>
         </section>
         <hr>
         <section id="elements" class="elements">
-            <h1>Elementos</h1>
+            <h1>Elementos e Reações Elementais</h1>
             <div class="elements-container">
-                <div class="elements-card">
-                    <img src="./img/Element_Pyro.png" alt="elemento pyro">
+                <div id="modal-fade"></div>
+                <div class="elements-card pyro">
+                    <img src="assets/img/Element_Pyro.png" alt="elemento pyro">
                     <span>Pyro</span>
                 </div>
-                <div class="elements-card">
-                    <img src="./img/Element_Hydro.png" alt="elemento hydro">
+                <dialog class="elements-modal">
+                    <div class="modal-title">
+                        <h2>Reações Elementais com <span class="color-text-pyro">pyro</span></h2>
+                        <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                    </div>
+                    <div class="modal-text">
+                        
+                    </div>
+                </dialog>
+                <div class="elements-card hydro">
+                    <img src="assets/img/Element_Hydro.png" alt="elemento hydro">
                     <span>Hydro</span>
                 </div>
-                <div class="elements-card">
-                    <img src="./img/Element_Anemo.png" alt="elemento anemo">
+                <dialog class="elements-modal">
+                    <div class="modal-title">
+                        <h2>Reações Elementais com <span class="color-text-hydro">hydro</span></h2>
+                        <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                    </div>
+                    <div class="modal-text">
+                        
+                    </div>
+                </dialog>
+                <div class="elements-card anemo">
+                    <img src="assets/img/Element_Anemo.png" alt="elemento anemo">
                     <span>Anemo</span>
                 </div>
-                <div class="elements-card">
-                    <img src="./img/Element_Electro.png" alt="elemento electro">
+                <dialog class="elements-modal">
+                    <div class="modal-title">
+                        <h2>Reações Elementais com <span class="color-text-anemo">anemo</span></h2>
+                        <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                    </div>
+                    <div class="modal-text">
+
+                    </div>
+                </dialog>
+                <div class="elements-card electro">
+                    <img src="assets/img/Element_Electro.png" alt="elemento electro">
                     <span>Electro</span>
                 </div>
-                <div class="elements-card">
-                    <img src="./img/Element_Dendro.png" alt="elemento dendro">
+                <dialog class="elements-modal">
+                    <div class="modal-title">
+                        <h2>Reações Elementais com <span class="color-text-electro">electro</span></h2>
+                        <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                    </div>
+                    <div class="modal-text">
+
+                    </div>
+                </dialog>
+                <div class="elements-card dendro">
+                    <img src="assets/img/Element_Dendro.png" alt="elemento dendro">
                     <span>Dendro</span>
                 </div>
-                <div class="elements-card">
-                    <img src="./img/Element_Cryo.png" alt="elemento cryo">
+                <dialog class="elements-modal">
+                    <div class="modal-title">
+                        <h2>Reações Elementais com <span class="color-text-dendro">dendro</span></h2>
+                        <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                    </div>
+                    <div class="modal-text">
+
+                    </div>
+                </dialog>
+                <div class="elements-card cryo">
+                    <img src="assets/img/Element_Cryo.png" alt="elemento cryo">
                     <span>Cryo</span>
                 </div>
-                <div class="elements-card">
-                    <img src="./img/Element_Geo.png" alt="elemento geo">
+                <dialog class="elements-modal">
+                    <div class="modal-title">
+                        <h2>Reações Elementais com <span class="color-text-cryo">cryo</span></h2>
+                        <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                    </div>
+                    <div class="modal-text">
+
+                    </div>
+                </dialog>
+                <div class="elements-card geo">
+                    <img src="assets/img/Element_Geo.png" alt="elemento geo">
                     <span>Geo</span>
                 </div>
+                <dialog class="elements-modal">
+                    <div class="modal-title">
+                        <h2>Reações Elementais com <span class="color-text-geo">geo</span></h2>
+                        <ion-icon class="modal-close" name="close-outline"></ion-icon>
+                    </div>
+                    <div class="modal-text">
+
+                    </div>
+                </dialog>
             </div>
-            <p>Existem 7 elementos no mundo de Teyvat, sendo eles: <b class="elements-names">pyro</b>, <b
-                    class="elements-names">hydro</b>, <b class="elements-names">anemo</b>, <b
-                    class="elements-names">electro</b>, <b class="elements-names">dendro</b>, <b
-                    class="elements-names">cryo</b>, <b class="elements-names">geo</b>. Combine esses elementos para
+            <p>Existem 7 elementos no mundo de Teyvat, sendo eles: <b class="color-text-pyro">pyro</b>, <b
+                    class="color-text-hydro">hydro</b>, <b class="color-text-anemo">anemo</b>, <b
+                    class="color-text-electro">electro</b>, <b class="color-text-dendro">dendro</b>, <b
+                    class="color-text-cryo">cryo</b> e <b class="color-text-geo">geo</b>. Combine esses elementos para
                 criar reações elementais e derrotar os inimigos
-                com mais facilidade, além de ultilizar-los para resolver quebra-cabeças coplexos ao decorrer da sua
-                viagem!</p>
+                com mais facilidade, além de ultilizar-los para resolver quebra-cabeças complexos ao decorrer da sua
+                viagem! Clique em um elemento para visualizar as reações elementais feitas por ele.</p>
         </section>
         <hr>
         <section id="characters" class="characters">
@@ -146,7 +219,8 @@
                     suas
                     próprias histórias personalidades e habilidades. Você poderá chama-los para sua equipe formando um
                     gruo
-                    de até 4 personagens para te ajudar a explorar o mundo de Teyvat!</p><br>
+                    de até 4 personagens para te ajudar a explorar o mundo de Teyvat! Clique no botão abaixo para
+                    saber mais sobre cada personagem.</p><br>
                 <a class="btn" href="pages/characters.html">Conhecer personagens</a>
             </div>
             <div class="column-img">
@@ -160,13 +234,13 @@
             <div class="column">
                 <div class="about">
                     <h2>Sobre nós</h2>
-                    <p>Criamos este site sobre o jogo Genshin Impact, com o objetivo de informar e familiarizar os
-                        jogadores a
-                        respeito das nações e dos personagens jogaveis disponiveis até a versão 3.8 do jogo.</p>
+                    <p>Site criado sobre o jogo Genshin Impact, com o objetivo de informar e familiarizar os
+                        jogadores a respeito das sete nações e dos personagens jogaveis disponiveis no jogo.
+                    </p>
                 </div>
             </div>
             <div class="column">
-                <h2>Links</h2>
+                <h2>Menu</h2>
                 <ul class="links">
                     <li><a href="#prologue">Prólogo</a></li>
                     <li><a href="#nations">Nações</a></li>
@@ -177,14 +251,15 @@
             <div class="column">
                 <h2>Contatos</h2>
                 <ul class="links">
-                    <li><a href="">GitHub</a></li>
-                    <li>sebaslopes579@gmail.com</li>
+                    <li><ion-icon name="logo-github"></ion-icon><a href="https://github.com/SebastiaoFellipe"
+                            target="_blank">GitHub</a></li>
+                    <li><ion-icon name="mail-outline"></ion-icon>sebaslopes579@gmail.com</li>
                 </ul>
             </div>
         </div>
-        <div class="copyright">copyright &copy; 2023 Genshin Library. Todos os direitos reservados.</div>
+        <div class="copyright">copyright &copy; 2023 Sebastião Fellipe. Todos os direitos reservados.</div>
     </footer>
-    <script src="./js/javascript.js"></script>
+    <script src="assets/javascript/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
