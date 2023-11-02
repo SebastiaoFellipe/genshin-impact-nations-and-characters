@@ -153,6 +153,9 @@
 }
 /* SMARTPHONE */
 @media screen and (max-width:767px) {
+    .nav-bar{
+        width: 100%;
+    }
     .nav-list{
         display: none;
     }

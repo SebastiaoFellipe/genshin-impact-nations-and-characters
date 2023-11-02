@@ -26,6 +26,7 @@ html, body {
 body {
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    font-family: ;
     background: url(../img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,6 +53,8 @@ header.sticky {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    width: 80%;
+    margin: 0 auto;
 }
 .logo{
     text-decoration: none;
@@ -183,10 +186,11 @@ header.sticky {
     right: 20px;
     bottom: 40px;
     background-color: var(--cinza-escuro);
-    height: 80px;
-    width: 80px;
+    height: 40px;
+    width: 40px;
+    padding: 12px;
     color: var(--branco);
-    border-radius: 1rem;
+    border-radius: 10px;
     display: block;
 }
 /* MAIN */
@@ -331,7 +335,7 @@ header.sticky {
     transition: all .2s;
     cursor: pointer;
 }
-.elements-container .elements-card img{
+.elements-container .elements-card .element-icon{
     width: 100%;
 }
 .elements-card:hover{
@@ -385,12 +389,18 @@ header.sticky {
     transform: translate(-50%, -50%);
     width: 50vw;
     border: none;
+    border-radius: 1em;
     padding: 20px;
     z-index: 11;
+    
 }
 .elements-container .elements-modal .modal-title{
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid var(--cinza-escuro);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 .elements-container .elements-modal .modal-close{
     font-size: 2rem;
@@ -399,8 +409,15 @@ header.sticky {
     z-index: 1;
     position: relative;
 }
-.elements-container .elements-modal .modal-text{
-    
+.elements-container .elements-modal .modal-text .reactions{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+}
+.elements-container .elements-modal .modal-text img{
+    height: 50px;
 }
 .elements-container .element-modal .modal-close{
     font-size: 2rem;

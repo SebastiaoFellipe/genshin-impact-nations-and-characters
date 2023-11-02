@@ -16,7 +16,7 @@ window.addEventListener("scroll", function () {
 const link_top = document.querySelector(".to-top");
 link_top.style.display = 'none';
 window.addEventListener("scroll", function () {
-  if (this.window.scrollY > 600) {
+  if (this.window.scrollY > 50) {
     link_top.style.display = 'block';
   } else {
     link_top.style.display = 'none';

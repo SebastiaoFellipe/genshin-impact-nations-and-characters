@@ -28,7 +28,6 @@
                 <li><a href="#prologue">Prólogo</a></li>
                 <li><a href="#nations">Nações</a></li>
                 <li><a href="#elements">Elementos</a></li>
-                <li><a href="#characters">Personages</a></li>
             </ul>
             <div class="mobile-menu-icon" onclick="toggle_menu()">
                 <ion-icon class="menu-open" name="menu-outline"></ion-icon>
@@ -38,7 +37,6 @@
                 <li><a class="mobile-nav-list-links" href="#prologue">Prólogo</a></li>
                 <li><a class="mobile-nav-list-links" href="#nations">Nações</a></li>
                 <li><a class="mobile-nav-list-links" href="#elements">Elementos</a></li>
-                <li><a class="mobile-nav-list-links" href="#characters">Personages</a></li>
             </ul>
         </nav>
     </header>
@@ -108,98 +106,364 @@
         </section>
         <hr>
         <section id="elements" class="elements">
-            <h1>Elementos e Reações Elementais</h1>
+            <h1>Elementos</h1>
             <div class="elements-container">
                 <div id="modal-fade"></div>
                 <div class="elements-card pyro">
-                    <img src="assets/img/Element_Pyro.png" alt="elemento pyro">
+                    <img class="element-icon" src="assets/img/Element_Pyro.png" alt="elemento pyro">
                     <span>Pyro</span>
                 </div>
                 <dialog class="elements-modal">
                     <div class="modal-title">
+                        <span></span>
                         <h2>Reações Elementais com <span class="color-text-pyro">pyro</span></h2>
                         <ion-icon class="modal-close" name="close-outline"></ion-icon>
                     </div>
                     <div class="modal-text">
-                        
+                        <div class="reactions">
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>=</span>
+                            <span>Vaporização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>=</span>
+                            <span>Fusão</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>=</span>
+                            <span>Sobrecarga</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Dendro.png" alt="elemento dendro" title="Dendro">
+                            <span>=</span>
+                            <span>Queimadura</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>+</span>
+                            <span class="color-text-dendro" title="Dendro + Hydro">Florescimento</span>
+                            <span>=</span>
+                            <span>Germinação</span>
+                        </div>
                     </div>
                 </dialog>
                 <div class="elements-card hydro">
-                    <img src="assets/img/Element_Hydro.png" alt="elemento hydro">
+                    <img class="element-icon" src="assets/img/Element_Hydro.png" alt="elemento hydro">
                     <span>Hydro</span>
                 </div>
                 <dialog class="elements-modal">
                     <div class="modal-title">
+                        <span></span>
                         <h2>Reações Elementais com <span class="color-text-hydro">hydro</span></h2>
                         <ion-icon class="modal-close" name="close-outline"></ion-icon>
                     </div>
                     <div class="modal-text">
-                        
+                        <div class="reactions">
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>=</span>
+                            <span>Vaporização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>=</span>
+                            <span>Congelamento</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>=</span>
+                            <span>Eletricamente Carregado</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Dendro.png" alt="elemento dendro" title="Dendro">
+                            <span>=</span>
+                            <span class="color-text-dendro">Florescimento</span>
+                        </div>
                     </div>
                 </dialog>
                 <div class="elements-card anemo">
-                    <img src="assets/img/Element_Anemo.png" alt="elemento anemo">
+                    <img class="element-icon" src="assets/img/Element_Anemo.png" alt="elemento anemo">
                     <span>Anemo</span>
                 </div>
                 <dialog class="elements-modal">
                     <div class="modal-title">
+                        <span></span>
                         <h2>Reações Elementais com <span class="color-text-anemo">anemo</span></h2>
                         <ion-icon class="modal-close" name="close-outline"></ion-icon>
                     </div>
                     <div class="modal-text">
-
+                        <div class="reactions">
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
                     </div>
                 </dialog>
                 <div class="elements-card electro">
-                    <img src="assets/img/Element_Electro.png" alt="elemento electro">
+                    <img class="element-icon" src="assets/img/Element_Electro.png" alt="elemento electro">
                     <span>Electro</span>
                 </div>
                 <dialog class="elements-modal">
                     <div class="modal-title">
+                        <span></span>
                         <h2>Reações Elementais com <span class="color-text-electro">electro</span></h2>
                         <ion-icon class="modal-close" name="close-outline"></ion-icon>
                     </div>
                     <div class="modal-text">
-
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>=</span>
+                            <span>Sobrecarga</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>=</span>
+                            <span>Eletricamente Carregado</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>=</span>
+                            <span>Supercondutor</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Dendro.png" alt="elemento dendro" title="Dendro">
+                            <span>=</span>
+                            <span class="color-text-dendro">Aceleração</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <span class="color-text-dendro">Aceleração</span>
+                            <span>=</span>
+                            <span>Intensificação</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>+</span>
+                            <span class="color-text-dendro">Florescimento</span>
+                            <span>=</span>
+                            <span>Superflorescimento</span>
+                        </div>
                     </div>
                 </dialog>
                 <div class="elements-card dendro">
-                    <img src="assets/img/Element_Dendro.png" alt="elemento dendro">
+                    <img class="element-icon" src="assets/img/Element_Dendro.png" alt="elemento dendro">
                     <span>Dendro</span>
                 </div>
                 <dialog class="elements-modal">
                     <div class="modal-title">
+                        <span></span>
                         <h2>Reações Elementais com <span class="color-text-dendro">dendro</span></h2>
                         <ion-icon class="modal-close" name="close-outline"></ion-icon>
                     </div>
                     <div class="modal-text">
-
+                        <div class="reactions">
+                            <img src="assets/img/Element_Dendro.png" alt="elemento dendro" title="Dendro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>=</span>
+                            <span>Queimadura</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Dendro.png" alt="elemento dendro" title="Dendro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>=</span>
+                            <span class="color-text-dendro">Florescimento</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Dendro.png" alt="elemento dendro" title="Dendro">
+                            <span>+</span>
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>=</span>
+                            <span class="color-text-dendro">Aceleração</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Dendro.png" alt="elemento dendro" title="Dendro">
+                            <span>+</span>
+                            <span class="color-text-dendro">Aceleração</span>
+                            <span>=</span>
+                            <span>Propagação</span>
+                        </div>
                     </div>
                 </dialog>
                 <div class="elements-card cryo">
-                    <img src="assets/img/Element_Cryo.png" alt="elemento cryo">
+                    <img class="element-icon" src="assets/img/Element_Cryo.png" alt="elemento cryo">
                     <span>Cryo</span>
                 </div>
                 <dialog class="elements-modal">
                     <div class="modal-title">
+                        <span></span>
                         <h2>Reações Elementais com <span class="color-text-cryo">cryo</span></h2>
                         <ion-icon class="modal-close" name="close-outline"></ion-icon>
                     </div>
                     <div class="modal-text">
-
+                        <div class="reactions">
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>=</span>
+                            <span>Fusão</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>=</span>
+                            <span>Congelamento</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>=</span>
+                            <span>Supercondutor</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Anemo.png" alt="elemento anemo" title="Anemo">
+                            <span>=</span>
+                            <span>Redemoinho</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
                     </div>
                 </dialog>
                 <div class="elements-card geo">
-                    <img src="assets/img/Element_Geo.png" alt="elemento geo">
+                    <img class="element-icon" src="assets/img/Element_Geo.png" alt="elemento geo">
                     <span>Geo</span>
                 </div>
                 <dialog class="elements-modal">
                     <div class="modal-title">
+                        <span></span>
                         <h2>Reações Elementais com <span class="color-text-geo">geo</span></h2>
                         <ion-icon class="modal-close" name="close-outline"></ion-icon>
                     </div>
                     <div class="modal-text">
-
+                        <div class="reactions">
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Pyro.png" alt="elemento pyro" title="Pyro">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Hydro.png" alt="elemento hydro" title="Hydro">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Cryo.png" alt="elemento cryo" title="Cryo">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
+                        <div class="reactions">
+                            <img src="assets/img/Element_Geo.png" alt="elemento geo" title="Geo">
+                            <span>+</span>
+                            <img src="assets/img/Element_Electro.png" alt="elemento electro" title="Electro">
+                            <span>=</span>
+                            <span>Cristalização</span>
+                        </div>
                     </div>
                 </dialog>
             </div>
@@ -245,7 +509,6 @@
                     <li><a href="#prologue">Prólogo</a></li>
                     <li><a href="#nations">Nações</a></li>
                     <li><a href="#elements">Elementos</a></li>
-                    <li><a href="#characters">Personages</a></li>
                 </ul>
             </div>
             <div class="column">
