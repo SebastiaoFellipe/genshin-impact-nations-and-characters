@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genshin Impact - Mundo e Personagens</title>
+    <title>Teyvat Wiki</title>
     <!--css-->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsivity.css">
@@ -15,6 +15,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
         rel="stylesheet">
+
+    <!-- javascript -->
+    <script src="assets/javascript/script.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- SWIPER LINKS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -22,12 +32,13 @@
         <nav class="nav-bar">
             <a class="logo" href="#home">
                 <ion-icon class="icon-logo" name="book-outline"></ion-icon>
-                <h1>Genshin Library</h1>
+                <h1>Teyvat Wiki</h1>
             </a>
             <ul class="nav-list">
                 <li><a href="#prologue">Prólogo</a></li>
                 <li><a href="#nations">Nações</a></li>
                 <li><a href="#elements">Elementos</a></li>
+                <li><a href="#characters">Personagens</a></li>
             </ul>
             <div class="mobile-menu-icon" onclick="toggle_menu()">
                 <ion-icon class="menu-open" name="menu-outline"></ion-icon>
@@ -37,74 +48,39 @@
                 <li><a class="mobile-nav-list-links" href="#prologue">Prólogo</a></li>
                 <li><a class="mobile-nav-list-links" href="#nations">Nações</a></li>
                 <li><a class="mobile-nav-list-links" href="#elements">Elementos</a></li>
+                <li><a class="mobile-nav-list-links" href="#characters">Characters</a></li>
             </ul>
         </nav>
     </header>
     <section id="home" class="homescreen">
-        <div>
-            <h1>Bem-vindo ao<br>mundo de Teyvat</h1>
-        </div>
+        <h1 class="homescreen-title">Bem-vindo a Teyvat</h1>
+        <ion-icon class="homescreen-arrow" name="arrow-down-outline"></ion-icon>
     </section>
-    <a class="to-top" href="#home" title="Go to top"><ion-icon name="arrow-up-outline"></ion-icon></a>
+    <div class="homescreen-divisor"></div>
     <main class="content">
         <section id="prologue" class="prologue">
-            <div class="column-info">
-                <h1>Prólogo</h1><br>
-                <p>Como um viajante de origem desconhecida, em uma das suas viajens você trava uma batalha contra uma
-                    divindade desconhecida que captura seu parente de sangue, e além de selar seus poderes, ela te exila
-                    para o mundo de Teyvat. Vagando por esse mundo, em uma das suas pescarias, você acaba pescando
-                    paimon, que em forma de agredecimento, se torna sua guia e companheira de viagem. juntos, vocês
-                    partem uma uma jornada nesse mundo desconhecido em busca do seu parente perdido!</p>
-            </div>
             <div class="column-img">
                 <img src="assets/img/aether and lumine.png" alt="personagens aether e lumine">
             </div>
-        </section>
-        <hr>
-        <section id="nations" class="nations">
-            <br>
-            <h1>Nações</h1><br>
-            <p>Explore todas as sete nações de Teyvat, conheçendo suas diferentes culturas e paisagens, enfrentando os
-                desafios para desvendar os segredos ocultos de cada uma nesse mundo vasto, cheio de aventuras e
-                mistérios. Cada
-                nação é governada por um arconte que representa um elemento diferente e um ideal. Clique no botão abaixo
-                para
-                saber mais sobre cada nação.</p>
-            <br>
-            <a class="btn" href="pages/nations.html">Conhecer nações</a>
-            <h1 class="nations-galery-title">Galeria das Nações</h1>
-            <div class="nations-galery">
-                <figure class="nation mondstadt">
-                    <img class="nations-img" src="assets/img/nation mondstadt.png" alt="região de mondstadt">
-                    <figcaption class="caption">Mondstadt</figcaption>
-                </figure>
-                <figure class="nation liyue">
-                    <img class="nations-img " src="assets/img/nation liyue.png" alt="região de liyue">
-                    <figcaption class="caption">Liyue</figcaption>
-                </figure>
-                <figure class="nation inazuma">
-                    <img class="nations-img " src="assets/img/nation inazuma.png" alt="região de inazuma">
-                    <figcaption class="caption">Inazuma</figcaption>
-                </figure>
-                <figure class="nation sumeru">
-                    <img class="nations-img " src="assets/img/nation sumeru.png" alt="região de sumeru">
-                    <figcaption class="caption">Sumeru</figcaption>
-                </figure>
-                <figure class="nation fontaine">
-                    <img class="nations-img " src="assets/img/no image.png" alt="região de fontaine">
-                    <figcaption class="caption">Fontaine</figcaption>
-                </figure>
-                <figure class="nation natlan">
-                    <img class="nations-img " src="assets/img/no image.png" alt="região de natlan">
-                    <figcaption class="caption">Natlan</figcaption>
-                </figure>
-                <figure class="nation snezhnaya">
-                    <img class="nations-img " src="assets/img/no image.png" alt="região de snezhnaya">
-                    <figcaption class="caption">Snezhnaya</figcaption>
-                </figure>
+            <div class="column-info">
+                <h1>Prólogo</h1>
+                <p>Como um viajante de origem desconhecida, em uma das suas viajens você trava uma batalha contra uma
+                    deusa desconhecida que captura seu parente de sangue e te exila para o mundo de Teyvat. Vagando
+                    por esse mundo, você conhece paimon, que logo se torna sua guia e companheira de viagem. juntos,
+                    vocês partem uma uma jornada nesse mundo desconhecido em busca do seu parente perdido!</p>
             </div>
         </section>
-        <hr>
+        <section id="nations" class="nations">
+            <h1>Nações</h1>
+            <p>Existem sete nações em Teyvat, cada uma sendo governada por um arconte que está associado a um dos sete
+                elementos. Cada nação é um mundo próprio, com fauna e flora únicas que povoam suas terras, além de uma
+                enorme riqueza cultural. Atualmente, as cinco nações disponíveis no jogo são: Mondstadt, a nação da
+                liberdade e do elemento anemo; Liyue, a nação dos contratos e do elemento geo; Inazuma, a nação da
+                eternidade e do elemento electro; Sumeru, a nação do conhecimento e do elemento dendro; Fontaine, a
+                nação da justiça e do elemento hydro.</p>
+            <button class="btn"><a class="link-btn" href="pages/characters.html">Conhecer Nações<ion-icon
+                        class="icon-btn" name="arrow-forward-outline"></ion-icon></a></button>
+        </section>
         <section id="elements" class="elements">
             <h1>Elementos</h1>
             <div class="elements-container">
@@ -467,25 +443,24 @@
                     </div>
                 </dialog>
             </div>
-            <p>Existem 7 elementos no mundo de Teyvat, sendo eles: <b class="color-text-pyro">pyro</b>, <b
+            <p>Os sete elementos no mundo de Teyvat, são: <b class="color-text-pyro">pyro</b>, <b
                     class="color-text-hydro">hydro</b>, <b class="color-text-anemo">anemo</b>, <b
                     class="color-text-electro">electro</b>, <b class="color-text-dendro">dendro</b>, <b
-                    class="color-text-cryo">cryo</b> e <b class="color-text-geo">geo</b>. Combine esses elementos para
-                criar reações elementais e derrotar os inimigos
-                com mais facilidade, além de ultilizar-los para resolver quebra-cabeças complexos ao decorrer da sua
-                viagem! Clique em um elemento para visualizar as reações elementais feitas por ele.</p>
+                    class="color-text-cryo">cryo</b> e <b class="color-text-geo">geo</b>. Combinando esses elementos, é
+                possível criar reações elementais! Utilize-as para derrotar os inimigos com mais facilidade e resolver
+                quebra-cabeças complexos durante sua exploração! Clique em um elemento para visualizar as reações
+                elementais feitas por ele.</p>
         </section>
-        <hr>
         <section id="characters" class="characters">
             <div class="column-info">
-                <h1>Personagens</h1><br>
+                <h1>Personagens</h1>
                 <p>Durante sua jornada, você encontrará diversos personagens que se tornarão seus amigos, cada um com
-                    suas
-                    próprias histórias personalidades e habilidades. Você poderá chama-los para sua equipe formando um
-                    gruo
-                    de até 4 personagens para te ajudar a explorar o mundo de Teyvat! Clique no botão abaixo para
-                    saber mais sobre cada personagem.</p><br>
-                <a class="btn" href="pages/characters.html">Conhecer personagens</a>
+                    suas próprias histórias, personalidades e habilidades. Você poderá chama-los para sua equipe
+                    formando um
+                    grupo de até 4 personagens para te ajudar a explorar o mundo de Teyvat!</p>
+                <button class="btn"><a class="link-btn" href="pages/characters.html">Conhecer Personagens<ion-icon
+                            class="icon-btn" name="arrow-forward-outline"></ion-icon></a></button>
+
             </div>
             <div class="column-img">
                 <img src="https://defeatzone.com/wp-content/uploads/2022/01/Vazamento-de-Dados-Sobre-Novos-Personagens.jpeg"
@@ -493,30 +468,26 @@
             </div>
         </section>
     </main>
+    <a id="to-top" href="#home">
+        <div>Voltar ao Início</div>
+    </a>
     <footer class="footer">
         <div class="footer-info">
             <div class="column">
                 <div class="about">
                     <h2>Sobre nós</h2>
-                    <p>Site criado sobre o jogo Genshin Impact, com o objetivo de informar e familiarizar os
-                        jogadores a respeito das sete nações e dos personagens jogaveis disponiveis no jogo.
+                    <p>Site criado sobre o jogo Genshin Impact, com o objetivo de familiarizar os
+                        jogadores a respeito das sete nações de teyvat e apresentar todoos personagens jogaveis disponiveis no jogo.
                     </p>
                 </div>
-            </div>
-            <div class="column">
-                <h2>Menu</h2>
-                <ul class="links">
-                    <li><a href="#prologue">Prólogo</a></li>
-                    <li><a href="#nations">Nações</a></li>
-                    <li><a href="#elements">Elementos</a></li>
-                </ul>
             </div>
             <div class="column">
                 <h2>Contatos</h2>
                 <ul class="links">
                     <li><ion-icon name="logo-github"></ion-icon><a href="https://github.com/SebastiaoFellipe"
                             target="_blank">GitHub</a></li>
-                    <li><ion-icon name="mail-outline"></ion-icon>sebaslopes579@gmail.com</li>
+                    <li><ion-icon name="mail-outline"></ion-icon><a href="mailto:sebaslopes369@gmail.com">sebaslopes369@gmail.com</a>
+                    </li>
                 </ul>
             </div>
         </div>

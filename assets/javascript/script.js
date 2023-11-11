@@ -1,25 +1,13 @@
-/*PEGAR POSIÇÃO DO MOUSE
-var cursor = document.querySelector('.cursor');
-window.addEventListener('mousemove', function(e){
-  cursor.style.top = e.pageY+'px';
-  cursor.style.left = e.pageX+'px';
-});
-*/
-
 // ANIMATION ON HEADER
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 0)
-});
+  header.classList.toggle("sticky", window.scrollY > 0);
 
-// BUTTON TO TOP
-const link_top = document.querySelector(".to-top");
-link_top.style.display = 'none';
-window.addEventListener("scroll", function () {
-  if (this.window.scrollY > 50) {
-    link_top.style.display = 'block';
+  const homescreen_arrow = this.document.querySelector(".homescreen-arrow");
+  if (this.window.scrollY>0) {
+    homescreen_arrow.style.display = 'none'
   } else {
-    link_top.style.display = 'none';
+    homescreen_arrow.style.display = 'block'
   }
 });
 
@@ -47,11 +35,9 @@ mobile_menu_icon.addEventListener("click", function () {
   if (mobile_menu_icon_open.style.display === 'block') {
     mobile_menu_icon_open.style.display = 'none';
     mobile_menu_icon_close.style.display = 'block';
-    console.log('abriu');
   } else if (mobile_menu_icon_open.style.display === 'none') {
     mobile_menu_icon_close.style.display = 'none';
     mobile_menu_icon_open.style.display = 'block';
-    console.log('fechou');
   }
   if (mobile_nav_list.classList.contains('close') || mobile_nav_list.classList.contains('open')) {
     mobile_nav_list.classList.toggle('open');
@@ -70,7 +56,6 @@ const body = document.querySelector("body");
 // OPEN MODAL
 for (let i = 0; i < elements_card.length; i++) {
   elements_card[i].addEventListener("click", function () {
-    console.log("abri");
     body.style.overflowY = 'hidden';
     elements_modal[i].show();
     elements_modal[i].blur();
@@ -87,6 +72,7 @@ for (let i = 0; i < icon_modal_close.length; i++) {
     body.style.overflowY = 'scroll';
   });
 }
+// CLOSE MODAL BY CLICK ON OUTSIDE THE MODAL
 let indice;
 modal_fade.addEventListener("click", function () {
   console.log("cliquei fora");
@@ -95,7 +81,7 @@ modal_fade.addEventListener("click", function () {
   body.style.overflowY = 'scroll';
 });
 // CLOSE MODAL BY CLICK ON ESC BUTTON
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     elements_modal[indice].close();
     modal_fade.style.display = 'none';
@@ -103,3 +89,31 @@ document.addEventListener("keydown", function(event) {
     console.log("fechei com esc");
   }
 });
+
+// SWIPER SLIDER settings
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  speed: 800,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+
+const link_to_top = document.querySelector("#to-top");
+link_to_top.addEventListener("click", function (event) {
+  console.log('clicou');
+  event.preventDefault();
+  var top = document.querySelector('#home');
+  top.scrollIntoView({behavior:"smooth"});
+});
+console.log(window);
